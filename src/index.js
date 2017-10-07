@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
-import App from './components/app';
+import SearchBar from './components/search_bar';
 import reducers from './reducers';
+import VideoList from './components/video_list'
+
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
+
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <VideoList />
   </Provider>
   , document.querySelector('.container'));
